@@ -6,7 +6,7 @@ pipeline {
         jdk 'jdk-17'
     }
 	parameters {
-        string(name: 'DOCKERHUB_USERNAME', defaultValue: 'my-dockerhub-id', description: 'Docker Hub username for image push'),
+        string(name: 'DOCKERHUB_USERNAME', defaultValue: 'my-dockerhub-id', description: 'Docker Hub username for image push')
 		string(name: 'GITHUB_USERNAME', defaultValue: 'my-dockerhub-id', description: 'Git Hub username for image push')
     }
 
