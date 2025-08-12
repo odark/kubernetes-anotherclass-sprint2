@@ -5,11 +5,15 @@ pipeline {
         gradle 'gradle-7.6.1'
         jdk 'jdk-17'
     }
+	parameters {
+        string(name: 'DOCKERHUB_USERNAME', defaultValue: 'my-dockerhub-id', description: 'Docker Hub username for image push'),
+		string(name: 'GITHUB_USERNAME', defaultValue: 'my-dockerhub-id', description: 'Git Hub username for image push')
+    }
 
     environment {
         // 본인의 username으로 하실 분은 수정해주세요.
-        DOCKERHUB_USERNAME = 'odark'
-        GITHUB_URL = 'https://github.com/odark/kubernetes-anotherclass-sprint2.git'
+        // DOCKERHUB_USERNAME = 'odark'
+        GITHUB_URL = 'https://github.com/${GITHUB_USERNAME}/kubernetes-anotherclass-sprint2.git'
 
         // 실습 넘버링
         CLASS_NUM = '2212'
